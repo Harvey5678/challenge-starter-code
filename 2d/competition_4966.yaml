@@ -1,0 +1,68 @@
+title: Example Hello World Competition
+description: An example competition where submissions should output "Hello World!"
+image: logo.jpg
+has_registration: True
+html:
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: terms_and_conditions.html
+    data: data.html
+phases:
+    1:
+        phasenumber: 1
+        label: "First phase"
+        start_date: 2013-06-30
+        max_submissions: 100
+        scoring_program: scoring_program.zip
+        reference_data: reference_data.zip
+leaderboard:
+    leaderboards:
+        Results: &RESULTS
+            label: RESULTS                      # This will be the title of the table
+            rank: 1
+    columns:
+        precision_0:                             # This corresponds to 1st value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 5cm precision                        # This is the name of the column in the table
+            numeric_format: 1                   # This is the number of decimals
+            rank: 2                             # This is the number of the column (column 2)
+        precision_1:                             # This corresponds to 2nd value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm precision
+            numeric_format: 1
+            rank: 3
+        precision_2:                             # This corresponds to 3rd value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 20cm precision
+            numeric_format: 1
+            rank: 4
+        recall_0:                             # This corresponds to 4th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 5cm recall
+            numeric_format: 1
+            rank: 5
+        recall_1:                             # This corresponds to 5th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm recall
+            numeric_format: 1
+            rank: 6
+        iou:                              # We will show the average rank among several scores
+            leaderboard: *RESULTS
+            label: iou                       # This is the column name in the table
+            numeric_format: 1
+            rank: 1                             # This will be the 1st column
+        recall_2:                               # We will also display duration (in seconds)
+            leaderboard: *RESULTS
+            label: 20cm recall 
+            numeric_format: 1
+            rank: 7
+        warping_error:                               # We will also display duration (in seconds)
+            leaderboard: *RESULTS
+            label: warping error 
+            numeric_format: 1
+            rank: 8
+        betti_error:                               # We will also display duration (in seconds)
+            leaderboard: *RESULTS
+            label: betti error 
+            numeric_format: 1
+            rank: 9

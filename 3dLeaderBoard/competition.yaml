@@ -1,0 +1,75 @@
+title: Example Hello World Competition
+description: An example competition where submissions should output "Hello World!"
+image: logo.jpg
+has_registration: True
+html:
+    overview: overview.html
+    evaluation: evaluation.html
+    terms: terms_and_conditions.html
+    data: data.html
+phases:
+    1:
+        phasenumber: 1
+        label: "First phase"
+        start_date: 2013-06-30
+        max_submissions: 100
+        scoring_program: scoring_program.zip
+        reference_data: reference_data.zip
+leaderboard:
+    leaderboards:
+        Results: &RESULTS
+            label: RESULTS                      # This will be the title of the table
+            rank: 1
+    columns:
+        average_IoU:                             # This corresponds to 4th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: Average IoU
+            numeric_format: 1
+            rank: 1
+        columns_IoU:                               # We will also display duration (in seconds)
+            leaderboard: *RESULTS
+            label: Columns IoU 
+            numeric_format: 1
+            rank: 2
+        doors_IoU:                              # We will show the average rank among several scores
+            leaderboard: *RESULTS
+            label: Doors IoU                       # This is the column name in the table
+            numeric_format: 1
+            rank: 3
+        walls_IoU:                             # This corresponds to 1st value provided by the scoring program
+            leaderboard: *RESULTS
+            label: Walls IoU                       # This is the name of the column in the table
+            numeric_format: 1                   # This is the number of decimals
+            rank: 4                             # This is the number of the column (column 2)
+        5cm_f1_average:                             # This corresponds to 2nd value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 5cm Average F1
+            numeric_format: 1
+            rank: 5
+        10cm_f1_average:                             # This corresponds to 3rd value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm Average F1
+            numeric_format: 1
+            rank: 6
+        20cm_f1_average:                             # This corresponds to 5th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 20cm Average F1
+            numeric_format: 1
+            rank: 7
+        10cm_f1_columns:                             # This corresponds to 5th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm Columns F1
+            numeric_format: 1
+            rank: 8
+        10cm_f1_doors:                             # This corresponds to 5th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm Doors F1
+            numeric_format: 1
+            rank: 9
+        10cm_f1_walls:                             # This corresponds to 5th value provided by the scoring program
+            leaderboard: *RESULTS
+            label: 10cm Walls F1
+            numeric_format: 1
+            rank: 10
+        
+

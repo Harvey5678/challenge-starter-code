@@ -1,0 +1,2 @@
+command: python3 $program/LocalEvaluation.py $program/reference/ $input/res/ $output
+description: Example competition evaluation program.
